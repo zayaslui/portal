@@ -6,9 +6,13 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use GuzzleHttp\Client;
+use App\Services;
 
 class PostController extends Controller
 {
+
+    protected $services;
+
     /**
      * Display a listing of the resource.
      *
@@ -94,7 +98,7 @@ class PostController extends Controller
     {
 
         $client = new Client();
-        $response = $client->request('GET', 'http://localhost:8080/api/posts-all');
+        $response = $client->request('GET', 'http://localhost:8280/api/obtenerPosts');
         $statusCode = $response->getStatusCode();
         $body = $response->getBody()->getContents();
 
