@@ -6,12 +6,12 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use GuzzleHttp\Client;
-use App\Services;
+//use App\Helpers\Helpers;
+use Helper;
+
 
 class PostController extends Controller
 {
-
-    protected $services;
 
     /**
      * Display a listing of the resource.
@@ -97,6 +97,7 @@ class PostController extends Controller
     public function obtenerPosts()
     {
 
+
         $client = new Client();
         $response = $client->request('GET', 'http://localhost:8280/api/obtenerPosts');
         $statusCode = $response->getStatusCode();
@@ -105,6 +106,11 @@ class PostController extends Controller
         //return json_decode($body);// returns an object
         return json_decode($body,true);// returns an array
         //return $body;
+    }
+
+    public function test() :string{
+        //return "hello";
+        return Helper::test();
     }
 
 }

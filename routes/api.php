@@ -9,6 +9,8 @@ use App\Models\Post;
 
 Route::get('/obtenerPosts', [App\Http\Controllers\PostController::class, 'obtenerPosts']);
 
+Route::get('/test', [App\Http\Controllers\PostController::class, 'test']);
+
 
 /*REST DE USUARIOS*/
 

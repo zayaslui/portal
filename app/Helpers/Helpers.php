@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services;
+namespace App\Helpers;
 
 use Illuminate\Support\Collection;
 use Illuminate\Session\SessionManager;
 
-class Services {
+class Helper {
 
     public function __construct(){}
 
@@ -22,7 +22,7 @@ class Services {
      * @return void
      */
 
-    public function test():string{
+    public static function test(){
         return "testing...  ";
     }
 
