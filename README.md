@@ -1,3 +1,5 @@
+SE ENCARGA EN DESCUBRIR LOS ENDPOINTS PARA CADA REST
+
 //iniciar la carpeta public 
 php -S localhost:8080 -t ./public
 
@@ -14,3 +16,5 @@ php artisan make:model Flight -crRs
 php artisan migrate:refresh --seed# passport
 
 //personal access token solo funciona con el formulario
+
+
