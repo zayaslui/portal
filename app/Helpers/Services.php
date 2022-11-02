@@ -37,9 +37,9 @@ class Services {
             $response = $client->request('POST', $APP_SKANKHUNT_PROVIDER.'/api/public/getLogin',['form_params' => $params]);
             $statusCode = $response->getStatusCode();
             $body = $response->getBody()->getContents();
-    
+
             $json =  json_decode($body,true);   // returns an array
-    
+
             return response($json,200);
         }
         catch (ClientException $exception) {
@@ -56,7 +56,7 @@ class Services {
      * @return array
      */
     public static function getRegisterService(Request $request){
-        
+
         $APP_SKANKHUNT_PROVIDER = Helper::getUrlProviderSkankHunt();
         $client = new Client();
 
@@ -74,9 +74,9 @@ class Services {
             $response = $client->request('POST', $APP_SKANKHUNT_PROVIDER.'/api/public/getRegister',['form_params' => $params]);
             $statusCode = $response->getStatusCode();
             $body = $response->getBody()->getContents();
-    
+
             $json =  json_decode($body,true);   // returns an array
-    
+
             return response($json,200);
         }
         catch (ClientException $exception) {
@@ -85,6 +85,28 @@ class Services {
 
 
     }
-    
+
+    public static function obtenerPosts(Request $request){
+
+        $APP_REST_PROVIDER = Helper::getUrlProviderRest();
+        $client = new Client();
+
+        try{
+
+            $response = $client->request('GET', $APP_REST_PROVIDER.'/api/rest/obtenerPosts');
+            $statusCode = $response->getStatusCode();
+            $body = $response->getBody()->getContents();
+
+            $json =  json_decode($body,true);   // returns an array
+
+            return response($json,200);
+        }
+        catch (ClientException $exception) {
+            return $exception;
+        }
+
+
+    }
+
 
 }

@@ -12,6 +12,9 @@ Route::group(['prefix' => 'portal'], function () {
     Route::post('/login'    , [App\Http\Controllers\PortalController::class     ,'login']);
     Route::post('/register' , [App\Http\Controllers\PortalController::class     ,'register']);
 
+    Route::get('/obtenerPosts' , [App\Http\Controllers\PortalController::class     ,'obtenerPosts']);
+
+
 });
 
 

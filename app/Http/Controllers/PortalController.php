@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\Services;
@@ -26,5 +26,11 @@ class PortalController extends Controller
         $response = Services::getRegisterService($request);
         return $response;
     }
+
+    public function obtenerPosts(Request $request){
+        $response = Services::obtenerPosts($request);
+        return $response;
+    }
+
 
 }
